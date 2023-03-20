@@ -1,0 +1,11 @@
+{
+  "extends": "@notion-transformer/tsconfig/react-library.json",
+  "include": ["."],
+  "exclude": ["dist", "build", "node_modules"],
+  "compilerOptions": {
+    "paths": {
+      "@notion-transformer/core": ["../core/src"]
+    }
+  },
+  "references": [{ "path": "../core" }]
+}

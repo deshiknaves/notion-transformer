@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest'
-import { transform } from './transform'
+import { transform } from '../transform'
 
 describe('Transform — Headings', () => {
   it('should be able to return a heading 1', () => {

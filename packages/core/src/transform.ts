@@ -1,8 +1,9 @@
-import { GenericBlock, headingOne } from './blocks'
-import { resolve } from './resolve'
+import { GenericBlock } from './blocks'
+import { resolve, Resolver } from './resolve'
 
-const resolvers = [headingOne]
-
-export function transform<Block extends GenericBlock>(block: Block) {
+export function transform<Block extends GenericBlock>(
+  block: Block,
+  resolvers: Resolver<any>[]
+) {
   return resolve(block, resolvers)
 }
