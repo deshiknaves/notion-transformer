@@ -1,0 +1,33 @@
+{
+  "name": "@notion-transformer/json",
+  "version": "0.0.0",
+  "main": "./dist/index.js",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "sideEffects": false,
+  "license": "MIT",
+  "files": [
+    "dist/**"
+  ],
+  "scripts": {
+    "build": "tsup src/index.tsx --format esm,cjs --dts --external react",
+    "dev": "tsup src/index.tsx --format esm,cjs --watch --dts --external react",
+    "lint": "eslint \"src/**/*.ts*\"",
+    "clean": "rm -rf .turbo && rm -rf node_modules && rm -rf dist",
+    "test": "vitest",
+    "coverage": "vitest run --coverage"
+  },
+  "dependencies": {
+    "@notion-transformer/core": "workspace:*"
+  },
+  "devDependencies": {
+    "@notion-transformer/tsconfig": "workspace:*",
+    "eslint": "^8.36.0",
+    "eslint-config-notion-transformer": "workspace:*",
+    "tsup": "^6.7.0",
+    "typescript": "^5.0.2"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}

@@ -7,3 +7,10 @@ export type HeadingOneBlock = GenericBlock & {
     text: TextBlock[]
   }
 }
+
+export type HeadingTwoBlock = GenericBlock & {
+  type: 'heading_2'
+  heading_2: {
+    text: TextBlock[]
+  }
+}

@@ -48,7 +48,7 @@ describe('Transform — Headings', () => {
       },
     })
 
-    expect(result).toBe('# Kitchen Sink')
+    expect(result).toEqual({ type: 'heading_1', value: 'Kitchen Sink' })
   })
 
   it('should be able to transform a heading 2', () => {
@@ -97,6 +97,6 @@ describe('Transform — Headings', () => {
       },
     })
 
-    expect(result).toBe('## H2 Heading')
+    expect(result).toEqual({ type: 'heading_2', value: 'H2 Heading' })
   })
 })
