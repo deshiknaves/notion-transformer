@@ -3,7 +3,14 @@ import {
   Resolver,
   transform as baseTransform,
 } from '@notion-transformer/core'
-import { headingOne, headingThree, headingTwo, image, quote } from './blocks'
+import {
+  code,
+  headingOne,
+  headingThree,
+  headingTwo,
+  image,
+  quote,
+} from './blocks'
 
 const resolvers: Resolver<any>[] = [
   headingOne,
@@ -11,6 +18,7 @@ const resolvers: Resolver<any>[] = [
   headingThree,
   quote,
   image,
+  code,
 ]
 
 export function transform<Block extends GenericBlock>(block: Block) {
