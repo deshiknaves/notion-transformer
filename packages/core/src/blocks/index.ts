@@ -1,3 +1,4 @@
+export * from './code'
 export * from './generic'
 export * from './heading'
 export * from './image'
