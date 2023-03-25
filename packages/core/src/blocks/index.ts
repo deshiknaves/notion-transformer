@@ -1,3 +1,5 @@
 export * from './generic'
 export * from './heading'
+export * from './image'
 export * from './quote'
+export * from './text'
