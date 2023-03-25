@@ -1,6 +1,7 @@
 import {
   GenericBlock,
   HeadingOneBlock,
+  HeadingThreeBlock,
   HeadingTwoBlock,
 } from '@notion-transformer/core'
 
@@ -23,6 +24,18 @@ export function headingTwo(block: GenericBlock) {
   return {
     type: 'heading_2',
     value: `${heading.heading_2.text
+      .map((text) => text.text.content)
+      .join('')}`,
+  }
+}
+
+export function headingThree(block: GenericBlock) {
+  if (block.type !== 'heading_3') return undefined
+  const heading = block as HeadingThreeBlock
+
+  return {
+    type: 'heading_3',
+    value: `${heading.heading_3.text
       .map((text) => text.text.content)
       .join('')}`,
   }

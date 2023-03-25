@@ -14,3 +14,10 @@ export type HeadingTwoBlock = GenericBlock & {
     text: TextBlock[]
   }
 }
+
+export type HeadingThreeBlock = GenericBlock & {
+  type: 'heading_3'
+  heading_3: {
+    text: TextBlock[]
+  }
+}
