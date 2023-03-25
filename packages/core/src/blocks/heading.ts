@@ -21,3 +21,10 @@ export type HeadingThreeBlock = GenericBlock & {
     text: TextBlock[]
   }
 }
+
+export type HeadingFourBlock = GenericBlock & {
+  type: 'heading_4'
+  heading_4: {
+    text: TextBlock[]
+  }
+}
