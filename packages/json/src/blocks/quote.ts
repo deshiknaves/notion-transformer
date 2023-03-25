@@ -1,4 +1,5 @@
 import { GenericBlock, QuoteBlock } from '@notion-transformer/core'
+import { text } from './text'
 
 export function quote(block: GenericBlock) {
   if (block.type !== 'quote') return undefined
@@ -6,6 +7,6 @@ export function quote(block: GenericBlock) {
 
   return {
     type: 'quote',
-    value: quote.quote.text.map((text) => text.text.content).join(''),
+    value: quote.quote.text.map(text),
   }
 }

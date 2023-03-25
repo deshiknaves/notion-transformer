@@ -48,7 +48,15 @@ describe('Transform — Headings', () => {
       },
     })
 
-    expect(result).toEqual({ type: 'heading_1', value: 'Kitchen Sink' })
+    expect(result).toEqual({
+      type: 'heading_1',
+      value: [
+        {
+          type: 'text',
+          value: 'Kitchen Sink',
+        },
+      ],
+    })
   })
 
   it('should be able to transform a heading 2', () => {
@@ -97,7 +105,15 @@ describe('Transform — Headings', () => {
       },
     })
 
-    expect(result).toEqual({ type: 'heading_2', value: 'H2 Heading' })
+    expect(result).toEqual({
+      type: 'heading_2',
+      value: [
+        {
+          type: 'text',
+          value: 'H2 Heading',
+        },
+      ],
+    })
   })
 
   it('should be able to transform a heading 3', () => {
@@ -146,6 +162,14 @@ describe('Transform — Headings', () => {
       },
     })
 
-    expect(result).toEqual({ type: 'heading_3', value: 'H3 Heading' })
+    expect(result).toEqual({
+      type: 'heading_3',
+      value: [
+        {
+          type: 'text',
+          value: 'H3 Heading',
+        },
+      ],
+    })
   })
 })

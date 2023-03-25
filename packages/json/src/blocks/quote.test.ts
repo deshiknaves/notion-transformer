@@ -49,7 +49,12 @@ describe('Transform — Quote', () => {
 
     expect(result).toEqual({
       type: 'quote',
-      value: '"This is a quote."',
+      value: [
+        {
+          type: 'text',
+          value: '"This is a quote."',
+        },
+      ],
     })
   })
 })
