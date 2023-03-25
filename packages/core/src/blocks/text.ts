@@ -13,5 +13,5 @@ export type TextBlock = {
     color: 'default'
   }
   plain_text: string
-  href: null
+  href?: string | null
 }
