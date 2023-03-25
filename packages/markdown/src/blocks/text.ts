@@ -16,6 +16,15 @@ function underline(text: string) {
   return `__${text}__`
 }
 
+function link(text: string, url?: string | null) {
+  if (!url) return text
+  return `[${text}](${url})`
+}
+
+function code(text: string) {
+  return `\`${text}\``
+}
+
 export function text(block: TextBlock) {
   let value = block.text.content
 
@@ -33,10 +42,15 @@ export function text(block: TextBlock) {
       case annotation === 'underline' && block.annotations[annotation]:
         value = underline(value)
         break
+      case annotation === 'code' && block.annotations[annotation]:
+        value = code(value)
+        break
       default:
         break
     }
   }
+
+  value = link(value, block.href)
 
   return value
 }

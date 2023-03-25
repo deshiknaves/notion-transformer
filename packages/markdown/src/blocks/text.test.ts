@@ -243,4 +243,50 @@ describe('Transform — Text', () => {
 
     expect(result).toEqual('__~~This is the text~~__')
   })
+
+  it('should be able to return a link text', () => {
+    const result = text({
+      type: 'text',
+      text: {
+        content: 'link',
+        link: {
+          url: 'https://www.example.com/',
+        },
+      },
+      annotations: {
+        bold: false,
+        italic: false,
+        strikethrough: false,
+        underline: false,
+        code: false,
+        color: 'default',
+      },
+      plain_text: 'link',
+      href: 'https://www.example.com/',
+    })
+
+    expect(result).toEqual('[link](https://www.example.com/)')
+  })
+
+  it('should be able to return a code text', () => {
+    const result = text({
+      type: 'text',
+      text: {
+        content: 'This is the text',
+        link: null,
+      },
+      annotations: {
+        bold: false,
+        italic: false,
+        strikethrough: false,
+        underline: false,
+        code: true,
+        color: 'default',
+      },
+      plain_text: 'This is the text',
+      href: null,
+    })
+
+    expect(result).toEqual('`This is the text`')
+  })
 })

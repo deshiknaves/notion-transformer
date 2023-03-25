@@ -2,7 +2,7 @@ export type TextBlock = {
   type: 'text'
   text: {
     content: string
-    link: null
+    link?: { url: string } | null
   }
   annotations: {
     bold: boolean
